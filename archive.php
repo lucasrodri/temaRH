@@ -17,10 +17,11 @@ $description = get_the_archive_description();
 <?php if ( have_posts() ) : ?>
 
 	<?php
-		echo "<div class=\"container-lg\">";
-		echo "<div class=\"breadcrumb-post\" style=\"margin-left: -24px;\">";
-		echo do_shortcode('[shortcode_breadcrumb]');
-		echo "</div></div>";
+		//echo "<div class=\"container-lg\">";
+		//echo "<div class=\"breadcrumb-post\" style=\"margin-left: -24px;\">";
+		//echo do_shortcode('[shortcode_breadcrumb]');
+		//echo "</div></div>";
+		echo "<div><br></div>";
 	?>
 
 	<div class="container-lg d-block">

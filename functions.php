@@ -1015,3 +1015,20 @@ function chama_shortcode_redes($params) {
 
 #Ex: [shortcode_redes rede_slug="rede-0" categoria_slug="rede-0-categoria"] 
 add_shortcode('shortcode_redes', 'chama_shortcode_redes');
+
+
+
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+  if ( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+    $post_type = get_query_var('post_type');
+    if($post_type) {
+        $post_type = $post_type;
+	}
+    else {
+        $post_type = array('post','rede-0','rede-1','rede-2','rede-3','rede-5','rede-6','rede-7','rede-8','rede-9'); // replace cpt to your custom post type
+	}
+    $query->set('post_type',$post_type);
+    return $query;
+    }
+}
